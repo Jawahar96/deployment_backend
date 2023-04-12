@@ -24,8 +24,7 @@ app.use(cors({
 
 
 app.get('/home',function(req,res){
-    let qParams = req.query
-    console.log(qParams);
+    
     res.json({message : "WELCOME TO FULL STACK DEMO TASK"})
 })
 

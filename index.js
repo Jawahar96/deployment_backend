@@ -50,9 +50,11 @@ app.post('/create-user', async function(req,res){
        let users= await db.collection("user").find().toArray()
      await  connection.close()
      res.json(users)
+     console.log(res);
         }catch(error){
             console.log(error);
             res.status(500).json({message : "Users are not getting properly"})
+            
         }
     })
     // view user

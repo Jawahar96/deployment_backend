@@ -51,6 +51,7 @@ app.post('/create-user', async function(req,res){
      await  connection.close()
      res.json(users)
         }catch(error){
+            console.log(error);
             res.status(500).json({message : "Users are not getting properly"})
         }
     })
@@ -64,6 +65,7 @@ app.post('/create-user', async function(req,res){
            res.json(users)
 
         }catch(error){
+            console.log(error);
                 res.json({message : "User view is not listed properly"})
         }
     })
@@ -79,6 +81,7 @@ app.post('/create-user', async function(req,res){
             res.json({message : "Users details are updated"})
             
         }catch(error){
+            console.log(error);
             res.status(500).json({messasge : "Users details are not updated properly"})
         }
     })
@@ -92,6 +95,7 @@ app.delete('/userdelete', async function(req,res){
      res.json(deleteuser)
      res.status(200).json({message : "user detail has been deleted successfully"})
     }catch(error){
+        
         res.json({message : "user details cannot be deleted properly"})
     }
 })

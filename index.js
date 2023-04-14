@@ -1,9 +1,6 @@
 const express = require('express');
 
 const app = express();
-const dotenv =require('dotenv').config
-
-const PORT = process.env.PORT || 8080
 
 const mongodb = require('mongodb')
 
@@ -11,20 +8,26 @@ const cors = require('cors')
 
 const mongoClient = mongodb.MongoClient
 
-const url =('mongodb+srv://jawaharsabesan:0NahDDc83UyIQLXL@cluster0.n6dtkg8.mongodb.net/?retryWrites=true&w=majority')
+const dotenv = require('dotenv').config()
+
+
+const url =('mongodb+srv://jawaharsabesan:PcU3Ij1M4NI6TJr3@cluster0.n6dtkg8.mongodb.net/?retryWrites=true&w=majority')
 
 const DB ="fullstackdemo"
 
 app.use(express.json())
 
 app.use(cors({
-    origin : "http ://localhost:3000"
+    origin : "*"
 }))
 
-
-
 app.get('/home',function(req,res){
-    
+//     let qParams =req.query
+//   console.log(qParams);
+//   let reusers =[]
+//   for(let i=parseInt(req.query.offset);i<parseInt(req.query.offset + req.query.limit);i++){
+//     reusers=push(users[i])
+//   }
     res.json({message : "WELCOME TO FULL STACK DEMO TASK"})
 })
 
@@ -95,6 +98,4 @@ app.delete('/userdelete', async function(req,res){
 })
 
 })
-app.listen(PORT,()=>{
-    console.log(`SERVER IS  RUNNING ON THE PORT ${PORT}`);
-})
+app.listen(process.env.PORT || 3000)

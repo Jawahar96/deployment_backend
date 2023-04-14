@@ -17,7 +17,7 @@ const DB ="fullstackdemo"
 app.use(express.json())
 
 app.use(cors({
-    origin : "*"
+    origin : "http://localhost:3001"
 }))
 
 app.get('/home',function(req,res){

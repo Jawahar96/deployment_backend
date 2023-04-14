@@ -47,7 +47,7 @@ app.post('/create-user', async function(req,res){
         try{
         const connection = await mongoClient.connect(url)
         const db=connection.db(DB)
-       let users= await db.collection("users").find().toArray()
+       let users= await db.collection("user").find().toArray()
      await  connection.close()
      res.json(users)
         }catch(error){
@@ -95,7 +95,7 @@ app.delete('/userdelete', async function(req,res){
      res.json(deleteuser)
      res.status(200).json({message : "user detail has been deleted successfully"})
     }catch(error){
-        
+
         res.json({message : "user details cannot be deleted properly"})
     }
 })

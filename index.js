@@ -10,8 +10,7 @@ const mongoClient = mongodb.MongoClient
 
 const dotenv = require('dotenv').config()
 
-
-const url =('mongodb+srv://jawaharsabesan:PcU3Ij1M4NI6TJr3@cluster0.n6dtkg8.mongodb.net/?retryWrites=true&w=majority')
+const url = process.env.DB
 
 const DB ="fullstackdemo"
 

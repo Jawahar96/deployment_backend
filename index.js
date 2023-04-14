@@ -12,7 +12,7 @@ const dotenv = require('dotenv').config()
 
 const url = process.env.DB
 
-const DB ="fullstackdemo"
+const DB ="Deployment"
 
 app.use(express.json())
 
